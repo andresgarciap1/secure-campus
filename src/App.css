@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ========================================================================== */
+/* TOKENS DE DISEÑO Y VARIABLES GLOBALES (Tailwind CSS v4)                    */
+/* ========================================================================== */
+/* - Color Primario (Sidebar institucional): --color-primary                  */
+/* - Color Secundario (Acento / Verde Esmeralda): --color-secondary           */
+/* - Escala Semántica de Severidad: critical, high, medium, low, ok           */
+/* ========================================================================== */
+
+@theme {
+  /* Color principal de la barra lateral (Estilo institucional del auxiliar) */
+  --color-primary: #181824;
+
+  /* Color secundario / activo institucional (Verde Esmeralda Ciberseguridad) */
+  --color-secondary: #10b981;
+
+  /* Colores semánticos estándar de severidad en Ciberseguridad */
+  --color-severity-critical: #f43f5e; /* Rose 500 */
+  --color-severity-high: #f97316;     /* Orange 500 */
+  --color-severity-medium: #f59e0b;   /* Amber 500 */
+  --color-severity-low: #71717a;      /* Zinc 500 */
+  --color-severity-info: #0ea5e9;     /* Sky 500 */
+  --color-severity-ok: #10b981;       /* Emerald 500 */
+}
+
+/* Base de la aplicación */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+/* En modo oscuro: Canvas Zinc profundo con soporte sin destellos */
+.dark body, .dark #root {
+  background-color: #09090b;
+  color: #f4f4f5;
+}
+
+/* Números tabulares automáticos para métricas precisas */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Utilidad para impresión de reportes de laboratorio (Ctrl + P) */
+@media print {
+  aside, header, .no-print {
+    display: none !important;
+  }
+  main {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}
