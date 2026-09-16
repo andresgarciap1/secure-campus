@@ -64,7 +64,9 @@ export default function Dashboard() {
     <div className="space-y-6 max-w-7xl mx-auto">
       
       {/* 1. ENCABEZADO FORMAL INSTITUCIONAL (UMSA · INF-133) */}
-      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 border-b border-zinc-200 dark:border-zinc-800/80 pb-4">
+      {/* === EJERCICIO 3 (EXAMEN): Mover o reordenar un elemento (Invertir posición de título y botones) === */}
+      {/* ANTES: <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 border-b border-zinc-200 dark:border-zinc-800/80 pb-4"> */}
+      <div className="flex flex-col md:flex-row-reverse md:items-center md:justify-between gap-4 border-b border-zinc-200 dark:border-zinc-800/80 pb-4">
         <div>
           <span className="text-[11px] font-mono uppercase tracking-widest text-zinc-500 dark:text-zinc-400 font-semibold">
             Facultad de Ciencias Puras y Naturales · Carrera de Informática
@@ -78,7 +80,9 @@ export default function Dashboard() {
         </div>
 
         {/* Botones de Acción Primaria */}
-        <div className="flex items-center gap-2.5 shrink-0">
+        {/* === EJERCICIO 5 (EXAMEN): Cambiar el espacio entre dos elementos (gap-2.5 -> gap-8) === */}
+        {/* ANTES: <div className="flex items-center gap-2.5 shrink-0"> */}
+        <div className="flex items-center gap-8 shrink-0">
           <Link
             to="/personalizar"
             className="h-9 px-3 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-800 dark:text-zinc-200 text-xs font-medium flex items-center gap-1.5 transition-colors"
@@ -86,9 +90,19 @@ export default function Dashboard() {
             <FiSliders size={14} />
             <span>Parámetros</span>
           </Link>
+
+          {/* === EJERCICIO 1 (EXAMEN): Cambiar un color (Verde esmeralda -> Violeta vibrante) === */}
+          {/* ANTES:
           <Link
             to="/diagnostico"
             className="h-9 px-4 rounded-lg bg-secondary hover:bg-emerald-600 text-white text-xs font-semibold flex items-center gap-1.5 shadow-xs transition-colors"
+          >
+            <span>+ Nueva Auditoría</span>
+          </Link>
+          */}
+          <Link
+            to="/diagnostico"
+            className="h-9 px-4 rounded-lg bg-violet-600 hover:bg-violet-700 text-white text-xs font-semibold flex items-center gap-1.5 shadow-xs transition-colors"
           >
             <span>+ Nueva Auditoría</span>
           </Link>
@@ -96,7 +110,9 @@ export default function Dashboard() {
       </div>
 
       {/* 2. THE PULSE & BARRA PROPORCIONAL DE SEVERIDAD (Estilo Senior Datadog / Snyk) */}
-      <section className="rounded-xl border border-zinc-200 dark:border-zinc-800/80 bg-white dark:bg-zinc-900/60 p-6 shadow-xs">
+      {/* === EJERCICIO 4 (EXAMEN): Efecto hover (Elevación scale-[1.01], sombra shadow-xl y resplandor de borde) === */}
+      {/* ANTES: <section className="rounded-xl border border-zinc-200 dark:border-zinc-800/80 bg-white dark:bg-zinc-900/60 p-6 shadow-xs"> */}
+      <section className="rounded-xl border border-zinc-200 dark:border-zinc-800/80 bg-white dark:bg-zinc-900/60 p-6 shadow-xs hover:shadow-xl hover:scale-[1.01] hover:border-emerald-500/50 transition-all duration-300">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
           
           {/* Lado Izquierdo: Gran cifra de Madurez con tipografía tabular */}
@@ -105,7 +121,9 @@ export default function Dashboard() {
               Índice de Madurez de Seguridad (Posture Score)
             </span>
             <div className="flex items-baseline gap-3">
-              <span className="text-4xl sm:text-5xl font-extrabold tracking-tight text-zinc-900 dark:text-white tabular-nums font-mono">
+              {/* === EJERCICIO 2 (EXAMEN): Cambiar tamaño de texto (text-5xl -> text-7xl gigante) === */}
+              {/* ANTES: <span className="text-4xl sm:text-5xl font-extrabold tracking-tight text-zinc-900 dark:text-white tabular-nums font-mono"> */}
+              <span className="text-6xl sm:text-7xl font-extrabold tracking-tight text-zinc-900 dark:text-white tabular-nums font-mono">
                 {result.score}%
               </span>
               <span
