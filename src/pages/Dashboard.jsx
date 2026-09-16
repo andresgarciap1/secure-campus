@@ -62,7 +62,7 @@ export default function Dashboard() {
 
   return (
     <div className="space-y-6 max-w-7xl mx-auto">
-      
+
       {/* 1. ENCABEZADO FORMAL INSTITUCIONAL (UMSA · INF-133) */}
       {/* === EJERCICIO 3 (EXAMEN): Mover o reordenar un elemento (Invertir posición de título y botones) === */}
       {/* ANTES: <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 border-b border-zinc-200 dark:border-zinc-800/80 pb-4"> */}
@@ -114,7 +114,7 @@ export default function Dashboard() {
       {/* ANTES: <section className="rounded-xl border border-zinc-200 dark:border-zinc-800/80 bg-white dark:bg-zinc-900/60 p-6 shadow-xs"> */}
       <section className="rounded-xl border border-zinc-200 dark:border-zinc-800/80 bg-white dark:bg-zinc-900/60 p-6 shadow-xs hover:shadow-xl hover:scale-[1.01] hover:border-emerald-500/50 transition-all duration-300">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-          
+
           {/* Lado Izquierdo: Gran cifra de Madurez con tipografía tabular */}
           <div className="space-y-1.5">
             <span className="text-xs font-mono uppercase tracking-wider text-zinc-500 dark:text-zinc-400 font-medium">
@@ -127,13 +127,12 @@ export default function Dashboard() {
                 {result.score}%
               </span>
               <span
-                className={`text-xs font-mono px-2.5 py-1 rounded border font-semibold ${
-                  result.score >= 75
+                className={`text-xs font-mono px-2.5 py-1 rounded border font-semibold ${result.score >= 75
                     ? 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/25'
                     : result.score >= 50
-                    ? 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/25'
-                    : 'bg-rose-500/10 text-rose-600 dark:text-rose-400 border-rose-500/25'
-                }`}
+                      ? 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/25'
+                      : 'bg-rose-500/10 text-rose-600 dark:text-rose-400 border-rose-500/25'
+                  }`}
               >
                 {result.score >= 75 ? 'Nivel Conforme' : result.score >= 50 ? 'Riesgo Moderado' : 'Exposición Crítica'}
               </span>
@@ -223,7 +222,7 @@ export default function Dashboard() {
 
       {/* 4. DOS PANELES INFERIORES: DOMINIOS Y TRATAMIENTO DE RIESGOS */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        
+
         {/* Panel A: Estado por Dominio de Seguridad (2 columnas) */}
         <section className="lg:col-span-2 rounded-xl border border-zinc-200 dark:border-zinc-800/80 bg-white dark:bg-zinc-900/60 p-6 shadow-xs">
           <div className="flex items-center justify-between border-b border-zinc-200 dark:border-zinc-800 pb-3 mb-4">
@@ -254,13 +253,12 @@ export default function Dashboard() {
                   </span>
                   <div className="flex items-center gap-2 font-mono">
                     <span
-                      className={`px-1.5 py-0.5 rounded text-[10px] font-semibold ${
-                        cat.level === 'Alto'
+                      className={`px-1.5 py-0.5 rounded text-[10px] font-semibold ${cat.level === 'Alto'
                           ? 'bg-rose-500/10 text-rose-600 dark:text-rose-400'
                           : cat.level === 'Medio'
-                          ? 'bg-amber-500/10 text-amber-600 dark:text-amber-400'
-                          : 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400'
-                      }`}
+                            ? 'bg-amber-500/10 text-amber-600 dark:text-amber-400'
+                            : 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400'
+                        }`}
                     >
                       {cat.level}
                     </span>
@@ -274,13 +272,12 @@ export default function Dashboard() {
                 <div className="h-2 w-full bg-zinc-100 dark:bg-zinc-800 rounded-full overflow-hidden">
                   <div
                     style={{ width: `${cat.score}%` }}
-                    className={`h-full rounded-full transition-all duration-300 ${
-                      cat.score >= 75
+                    className={`h-full rounded-full transition-all duration-300 ${cat.score >= 75
                         ? 'bg-emerald-500'
                         : cat.score >= 50
-                        ? 'bg-amber-400'
-                        : 'bg-rose-500'
-                    }`}
+                          ? 'bg-amber-400'
+                          : 'bg-rose-500'
+                      }`}
                   />
                 </div>
               </div>
